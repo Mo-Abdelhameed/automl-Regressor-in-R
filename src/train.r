@@ -100,7 +100,10 @@ if(length(categorical_features) > 0){
     df <- df_encoded
 }
 
-model <- automl_train(df, target)
+model <- automl_train(df, target, hpar = list(
+    learningrate = 0.01,
+    numiterations = 100,
+    layersshape = c(100, 30, 20)))
 
 # Save the best model
 saveRDS(model, PREDICTOR_FILE_PATH)

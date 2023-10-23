@@ -7,7 +7,7 @@ library(dplyr)
 
 set.seed(42)
 
-# Paths
+# Define directories and paths
 ROOT_DIR <- dirname(getwd())
 MODEL_INPUTS_OUTPUTS <- file.path(ROOT_DIR, 'model_inputs_outputs')
 INPUT_DIR <- file.path(MODEL_INPUTS_OUTPUTS, "inputs")
@@ -52,7 +52,6 @@ df <- read.csv(file_name, skip = 0, col.names = col_names, check.names=FALSE)
 
 imputation_values <- readRDS(IMPUTATION_FILE)
 for (column in names(df)[sapply(df, function(col) any(is.na(col)))]) {
-  print(imputation_values[["percent_asian"]])
   df[, column][is.na(df[, column])] <- imputation_values[[column]]
 }
 
