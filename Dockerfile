@@ -21,6 +21,9 @@ WORKDIR /opt/src
 RUN R -e "devtools::install_version('jsonlite', version='1.8.7', repos='https://cloud.r-project.org/')"
 RUN R -e "devtools::install_version('fastDummies', version='1.7.3', repos='https://cloud.r-project.org/')"
 RUN R -e "devtools::install_version('automl', version='1.3.2', repos='https://cloud.r-project.org/')"
+RUN R -e "devtools::install_version('dplyr', version='1.1.3', repos='https://cloud.r-project.org/')"
+RUN R -e "devtools::install_version('magrittr', version='2.0.3', repos='https://cloud.r-project.org/')"
+
 
 USER 1000
 

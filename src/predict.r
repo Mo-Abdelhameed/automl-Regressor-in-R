@@ -2,6 +2,8 @@
 library(jsonlite)
 library(automl)
 library(fastDummies)
+library(magrittr)
+library(dplyr)
 
 set.seed(42)
 
@@ -50,6 +52,7 @@ df <- read.csv(file_name, skip = 0, col.names = col_names, check.names=FALSE)
 
 imputation_values <- readRDS(IMPUTATION_FILE)
 for (column in names(df)[sapply(df, function(col) any(is.na(col)))]) {
+  print(imputation_values[["percent_asian"]])
   df[, column][is.na(df[, column])] <- imputation_values[[column]]
 }
 

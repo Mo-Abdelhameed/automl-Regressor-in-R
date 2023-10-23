@@ -2,6 +2,8 @@
 library(jsonlite)
 library(automl)
 library(fastDummies)
+library(magrittr)
+library(dplyr)
 
 set.seed(42)
 
@@ -55,7 +57,7 @@ df <- read.csv(file.path(TRAIN_DIR, file_name), skip = 0, col.names = col_names,
 imputation_values <- list()
 
 columns_with_missing_values <- colnames(df)[apply(df, 2, anyNA)]
-for (column in columns_with_missing_values) {
+for (column in nullable_features) {
     if (column %in% numeric_features) {
         value <- median(df[, column], na.rm = TRUE)
     } else {
