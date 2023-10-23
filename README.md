@@ -4,7 +4,7 @@ Fits from simple regression to highly customizable deep neural networks
 either with gradient descent or metaheuristic, using automatic hyper parameters
 tuning and custom cost function.
 A mix inspired by the common tricks on Deep Learning and Particle Swarm Optimization. <br>
-URL https://aboulaboul.github.io/automl
+URL https://aboulaboul.github.io/automl <br>
 https://github.com/aboulaboul/automl
 
 ## This repository is a dockerized implementation of the re-usable regression model.
