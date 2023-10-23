@@ -100,9 +100,7 @@ if(length(categorical_features) > 0){
     df <- df_encoded
 }
 
-model <- automl_train(df, target, hpar = list(
-    numiterations = 200,
-    autopar = list(subtimelimit=120))
+model <- automl_train(df, target, hpar = list(numiterations = 200), autopar = list(subtimelimit=120))
 
 # Save the best model
 saveRDS(model, PREDICTOR_FILE_PATH)
