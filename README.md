@@ -1,5 +1,12 @@
 # automl Regressor
 
+Fits from simple regression to highly customizable deep neural networks
+either with gradient descent or metaheuristic, using automatic hyper parameters
+tuning and custom cost function.
+A mix inspired by the common tricks on Deep Learning and Particle Swarm Optimization.
+URL https://aboulaboul.github.io/automl
+https://github.com/aboulaboul/automl
+
 ## This repository is a dockerized implementation of the re-usable regression model.
 
 ## Project Structure
@@ -54,10 +61,6 @@ In this section we cover the following:
 4. To run batch predictions, place the prediction data file in the `model_inputs_outputs/inputs/data/testing` directory in the bind mount. Then issue the command: <br/>
    `docker run -v <path_to_mount_on_host>/model_inputs_outputs:/opt/model_inputs_outputs model_img predict` <br/>
    This will load the artifacts and create and save the predictions in a file called `predictions.csv` in the path `model_inputs_outputs/outputs/predictions/` in the bind mount.
-
-## Important note:
-
-The regressor expects the target feature at the end of the dataframe and the input features to be in the same order in both training and testing phases.
 
 ## Contact Information
 

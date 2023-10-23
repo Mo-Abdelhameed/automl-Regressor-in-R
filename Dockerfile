@@ -18,9 +18,6 @@ ENV TMP /opt/tmp
 
 WORKDIR /opt/src
 
-ENV R_LIBS_USER=/usr/local/lib/R/site-library
-
-
 RUN R -e "devtools::install_version('jsonlite', version='1.8.7', repos='https://cloud.r-project.org/')"
 RUN R -e "devtools::install_version('fastDummies', version='1.7.3', repos='https://cloud.r-project.org/')"
 RUN R -e "devtools::install_version('automl', version='1.3.2', repos='https://cloud.r-project.org/')"
